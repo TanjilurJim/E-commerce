@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use \App\Http\Middleware\Calculate;
@@ -46,6 +47,7 @@ Route::get('/profile', function () {
     return "Profile";
 });
 
+Route::get("/user",[UserController::class,"show"]);
 
 
 
