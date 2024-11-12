@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\products;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use \App\Http\Middleware\Calculate;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,8 @@ Route::get('/profile', function () {
 });
 
 Route::get("/user",[UserController::class,"show"]);
+
+Route::resource('products',products::class);
 
 
 
