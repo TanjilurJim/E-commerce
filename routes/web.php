@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use \App\Http\Middleware\Calculate;
@@ -30,6 +31,8 @@ Route::post('/posts', function(){
     return "It worked";
     
 });  
+
+Route::get('/about',[PostsController::class,'index']);
 
 
  
