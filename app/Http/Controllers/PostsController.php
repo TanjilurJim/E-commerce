@@ -30,7 +30,8 @@ class PostsController extends Controller
     {
         //
 
-        $validatedData = $request->validate([ 'title' => 'required|max:50']);
+        $validatedData = $request->validate([ 'title' => 'required|max:50',
+    'body' => 'required|min:10',]);
         
     }
 
