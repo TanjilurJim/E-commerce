@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@extends('layouts.master')
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,24 +12,24 @@
         <a href="/">Home Page</a>
         {{-- <a href="{{route('company.contact')}}">Contact</a>
         <a href="{{}}"></a> --}}
-    </nav>
+    {{-- </nav>
     Default Home View
     <br><hr>
     <form action="/posts" method="post">
         {{csrf_field()}}
         {{-- <input type="hidden" name="" id=""  value=""> --}}
-        <label for="email">Email</label>
+        {{-- <label for="email">Email</label>
         <input type="email" name="email" id="email">
         <input type="submit" name="" id="">
 
+     --}}
+    
+     -
     
     
     
     
-    
-    
-    
-    </form>
+    {{-- </form>
 
     <form action="/products/?id=1" method="post">
         @csrf
@@ -62,9 +63,10 @@
         <button type="submit">submit for Delete</button> 
     
     
-    </form>
+    </form>  --}} 
+    
+    @section('content')
 
+    
 
-
-</body>
-</html>
+    @endsection

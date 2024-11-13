@@ -72,3 +72,7 @@ Route::get('/practice', function(){
 // Route::patch('/', function () {
 //     return view('welcome');
 // });
+
+Route::get('/dashboard',function(){
+    return view('Dashboard');   
+});  
