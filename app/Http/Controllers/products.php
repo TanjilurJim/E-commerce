@@ -12,6 +12,8 @@ class products extends Controller
     public function index()
     {
         //
+
+        return view("products");
     }
 
     /**
@@ -38,9 +40,10 @@ class products extends Controller
     public function show(string $id)
     {
         //
+        return "product #". $id;
     }
 
-    /**
+    /** 
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
@@ -54,6 +57,7 @@ class products extends Controller
     public function update(Request $request, string $id)
     {
         //
+        return "Update product #". $id;
     }
 
     /**
@@ -62,5 +66,6 @@ class products extends Controller
     public function destroy(string $id)
     {
         //
+        return "Product" . $id . "It is being Deleted";
     }
 }

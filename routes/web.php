@@ -37,7 +37,7 @@ Route::post('/posts', function(){
 
 Route::get('/about',[PostsController::class,'index']);
 
-
+// Route::get('/products',[products::class,'index']);
  
 
 // Route::get('/{id?}/{status? }', function ($id=null,$status=null) {return $status;});
@@ -49,11 +49,18 @@ Route::get('/profile', function () {
     return "Profile";
 });
 
-Route::get("/user",[UserController::class,"show"]);
+// Route::get("/user",[UserController::class,"show"]);
 
-Route::resource('products',products::class);
+Route::resources(['products'=>products::class,
+'user' => UserController::class,
+'posts'=> PostsController::class,
 
 
+]);
+
+Route::get('/practice', function(){
+    return view('practice');
+});
 
 
 // Route::post('/', function () {

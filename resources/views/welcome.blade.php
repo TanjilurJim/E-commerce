@@ -30,6 +30,41 @@
     
     </form>
 
+    <form action="/products/?id=1" method="post">
+        @csrf
+        <button type="submit">submit for products page</button>
+    
+    
+    
+    </form>
+<hr>
+    <form action="/products/1" method="post">
+        @csrf
+        <input type="hidden" name="_method" value="PATCH">
+        <button type="submit">submit for put or patch</button> 
+    
+    
+    </form>
+     
+    <hr>
+    <form action="/products/1" method="post">
+        @csrf
+        <input type="hidden" name="_method" value="Delete">
+        <button type="submit">submit for Delete</button> 
+    
+    
+    </form>
+    <br><hr>
+    <p>using laravel's blade directive ""</p>
+    <form action="/products/1" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit">submit for Delete</button> 
+    
+    
+    </form>
+
+
 
 </body>
 </html>

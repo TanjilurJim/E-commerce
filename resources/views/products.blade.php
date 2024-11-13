@@ -7,9 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    this is a layout practice
-
-    {{$slot}}
+    <h1>welcome to products page</h1>
 
 </body>
 </html>
