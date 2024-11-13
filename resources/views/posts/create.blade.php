@@ -7,7 +7,8 @@
 
 <div class="col-6 offset-sm-3">
     <h2 class="text-center">Create a Post</h2>
-    <form>
+    <form method="post" action="{{route('posts.store')}}">
+      @csrf
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input name="title" type="email" class="form-control" id="title" aria-describedby="emailHelp">

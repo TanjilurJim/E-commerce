@@ -64,6 +64,12 @@
     
     
     </form>  --}} 
+
+    @section('sidebar')
+        This is the sidebar
+        
+    
+    @endsection
     
     @section('content')
 

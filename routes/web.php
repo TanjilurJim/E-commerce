@@ -75,4 +75,7 @@ Route::get('/practice', function(){
 
 Route::get('/dashboard',function(){
     return view('Dashboard');   
-});  
+});     
+
+
+Route::resource('posts',PostsController::class);
