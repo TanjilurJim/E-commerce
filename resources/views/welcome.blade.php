@@ -9,11 +9,11 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home Page</a>
+        <a href="/">Dashboard Page</a>
         {{-- <a href="{{route('company.contact')}}">Contact</a>
         <a href="{{}}"></a> --}}
     {{-- </nav>
-    Default Home View
+    Default Dashboard View
     <br><hr>
     <form action="/posts" method="post">
         {{csrf_field()}}

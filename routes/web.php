@@ -1,12 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\products;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use \App\Http\Middleware\Calculate;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,63 +14,18 @@ use \App\Http\Middleware\Calculate;
 |
 */
 
-Route::get('/', function(){
+Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function (Request $request) {   
-    
-//     $token = $request->session()->token();
-//     // return view('welcome');
-//     return $token;
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/posts', function(){
-    return "It worked";
-    
-});  
-
-Route::get('/about',[PostsController::class,'index']);
-
-// Route::get('/products',[products::class,'index']);
- 
-
-// Route::get('/{id?}/{status? }', function ($id=null,$status=null) {return $status;});
-// dependency injection and redirects
-// Route::redirect("/", "/profile");
-
-
-Route::get('/profile', function () {
-    return "Profile";
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Route::get("/user",[UserController::class,"show"]);
-
-Route::resources(['products'=>products::class,
-'user' => UserController::class,
-'posts'=> PostsController::class,
-
-
-]);
-
-Route::get('/practice', function(){
-    return view('practice');
-});
-
-
-// Route::post('/', function () {
-//     return view('welcome');
-// });
-// Route::put('/', function () {
-//     return view('welcome');
-// });
-// Route::patch('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/dashboard',function(){
-    return view('Dashboard');   
-});     
-
-
-Route::resource('posts',PostsController::class);
+require __DIR__.'/auth.php';
